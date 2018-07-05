@@ -1,0 +1,21 @@
+{% extends "../base.html" %}
+{% block css_link %}
+<link href="/assets/css/guestbook.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+	<script language="JavaScript">
+		alert("GuestBook ID:"+{{guestbook_id}})
+	</script>
+
+{% block content %}
+	<div id="guestbook" class="delete-form">
+		<form method="post" action="/guestbook/delete">{% csrf_token %}
+			<input type="hidden" name="id" value="{{guestbook_id}}">
+			<!--<input type='hidden' name="no" value="">-->
+			<label>Password</label>
+			<input type="password" name="password">
+			<input type="submit" value=" OK ">
+		</form>
+		<a href="">GuestBook List</a>
+	</div>
+{% endblock %}
