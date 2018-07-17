@@ -5,7 +5,6 @@ from django.shortcuts import render
 # Create your views here.
 from user.models import User
 
-
 def joinform(request):
     return render(request, 'user/joinform.html')
 
@@ -37,6 +36,7 @@ def login(request):
 
     # 로그인 처리
     authuser = result[0]
+    # request.session['authuser']['id'] =''
     request.session['authuser'] = model_to_dict(authuser)
     print("request.session['authuser']: ",request.session['authuser'])
     return HttpResponseRedirect('/')

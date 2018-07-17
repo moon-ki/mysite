@@ -24,6 +24,7 @@ import board.views as board_views
 urlpatterns = [
 # 메인 화면
     path('', main_views.index),
+    path('error/',main_views.error),
 #관리자 화면
     path('admin/', admin.site.urls),
 # 사용자 관련 기능
@@ -60,5 +61,9 @@ urlpatterns = [
     path('board/view', board_views.view),
     path('board/modifyform', board_views.modifyform),
     path('board/modify', board_views.modify),
-    path('board/delete', board_views.delete)
+    path('board/delete', board_views.delete),
+    path('board/search',board_views.search)
+
+
+
 ]

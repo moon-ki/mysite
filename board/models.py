@@ -6,7 +6,7 @@ class Board(models.Model):
     title = models.CharField(max_length=200)
     content = models.CharField(max_length=2000)
     hit = models.IntegerField(default=0)
-    regdate = models.DateTimeField(auto_now=True)
+    regdate = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE) #user가 삭제됬을때 게시판글도 함께 삭제한다.
 
     def __str__(self):

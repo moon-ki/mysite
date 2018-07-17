@@ -23,7 +23,10 @@
 				</table>
 				<div class="bottom">
 					<a href="/board">글목록</a>
+					{% if request.session.authuser.id == board_view.user %}
+					<!--로그인한 유저와 게시물 작성자가 같은 경우만, 글수정 허용-->
 					<a href="/board/modifyform?boardid={{board_view.id}}">글수정</a>
+					{% endif %}
 				</div>
 			</div>
 {% endblock %}
